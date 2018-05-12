@@ -34,19 +34,46 @@
 <div class="footer"><p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; 2018 NameLess</p>
 <script type="text/javascript">
 
+	var field = ['', '', '', '', '', '', '', '', '']
+
 	function setX(cell) {
-		x(cell)
+		if (field[cell-1] == '') {
+			field[cell-1] = 'x'
+			x(cell)
+			var cell2 = getRandomInt(0, 8)
+				
+			while (field[cell2] != '') {
+				cell2 = getRandomInt(0, 8);
+				var c = 0;
+
+
+				for (var i=0; i<9; i++) {
+					if (field[i] == '') {
+						c++
+					}
+				}
+				if (c == 9) {
+					break;
+				}
+
+			 }
+		}
 	}
 
 	function x(cell) {
 		var elem = document.getElementById("cell" + cell);
 		elem.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
+
 		o(cell + 1);
 	}
 
 	function o(cell) {
 		var elem = document.getElementById("cell" + cell);
 		elem.innerHTML = '<i class="fa fa-circle-thin" aria-hidden="true"></i>';
+	}
+
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min)) + min;
 	}
 
 
