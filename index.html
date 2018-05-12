@@ -14,19 +14,19 @@
 <div class="background">
 	<table>
 		<tr>
-			<td onClick="setX(1)"></td>
-			<td onClick="setX(2)"></td>
-			<td onClick="setX(3)"></td>
+			<td id="cell1" onClick="setX(1)"></td>
+			<td id="cell2" onClick="setX(2)"></td>
+			<td id="cell3" onClick="setX(3)"></td>
 		</tr>
 		<tr>
-			<td onClick="setX(4)"></td>
-			<td onClick="setX(5)"></td>
-			<td onClick="setX(6)"></td>
+			<td id="cell4" onClick="setX(4)"></td>
+			<td id="cell5" onClick="setX(5)"></td>
+			<td id="cell6" onClick="setX(6)"></td>
 		</tr>
 		<tr>
-			<td onClick="setX(7)"></td>
-			<td onClick="setX(8)"></td>
-			<td onClick="setX(9)"></td>
+			<td id="cell7" onClick="setX(7)"></td>
+			<td id="cell8" onClick="setX(8)"></td>
+			<td id="cell9" onClick="setX(9)"></td>
 		</tr>
 	</table>
 </div>
@@ -34,15 +34,21 @@
 <div class="footer"><p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; 2018 NameLess</p>
 <script type="text/javascript">
 
-
-	function p(s = '') {
-		alert(s)
+	function setX(cell) {
+		x(cell)
 	}
 
-
-	function main() {
-		alert('ds')
+	function x(cell) {
+		var elem = document.getElementById("cell" + cell);
+		elem.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
+		o(cell + 1);
 	}
+
+	function o(cell) {
+		var elem = document.getElementById("cell" + cell);
+		elem.innerHTML = '<i class="fa fa-circle-thin" aria-hidden="true"></i>';
+	}
+
 
 
 </script>
