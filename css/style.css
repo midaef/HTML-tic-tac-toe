@@ -57,9 +57,10 @@ td:hover {
 	background-color: #C7E5FF;
 }
 
-#scr {
+.sab {
 	margin: 0 auto;
 	text-align: center;
+	height: 25px;
 }
 
 .animated {
@@ -70,9 +71,11 @@ td:hover {
 }
 
 .restart_button {
-	margin-bottom: 1px; 
+	margin-bottom: 1px;
+	/*height: 25px;*/
 }
 
 #scr {
-	height: 25px;
+	/*height: 25px;*/
+	display: inline;
 }
