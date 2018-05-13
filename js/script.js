@@ -5,7 +5,14 @@ var field = ['', '', '',
 
 var win = false
 
-var score = 0
+var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)score\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+var score = cookieValue
+if (score == '') {
+	score = 0
+}
+var elem = document.getElementById('scr')
+document.cookie = 'score=' + score + ';'
+elem.innerHTML = 'SCORE: ' + score
 
 function setX(cell) {
 	if (field[cell-1] == '' && win == false) {
@@ -89,6 +96,8 @@ function check_field(){
 
 function draw() {
 	elem = document.getElementById("scr");
+	elem.innerHTML = ''
+	elem = document.getElementById("for_button");
 	elem.innerHTML = '<button class="restart_button" onclick="newGame()">New game</button>';
 }
 
@@ -116,7 +125,9 @@ function print_win(cell) {
 		elem.innerHTML = 'N';
 		s()
 		elem = document.getElementById("scr");
-		elem.innerHTML = '<button class="restart_button" onclick="newGame()">New game</button>';	
+		elem.innerHTML = ''
+		elem = document.getElementById("for_button");
+		elem.innerHTML = '<button class="restart_button" onclick="newGame()">New game</button>';
 	}
 	else if (cell = 'o') {
 		clear_field()
@@ -133,6 +144,8 @@ function print_win(cell) {
 		elem.innerHTML = 'N';
 
 		elem = document.getElementById("scr");
+		elem.innerHTML = ''
+		elem = document.getElementById("for_button");
 		elem.innerHTML = '<button class="restart_button" onclick="newGame()">New game</button>';
 	}
 }
@@ -142,6 +155,8 @@ function newGame() {
 	clear_field()
 	elem = document.getElementById("scr");
 	elem.innerHTML = 'SCORE: ' + score;
+	elem = document.getElementById("for_button");
+	elem.innerHTML = '';
 }
 
 function getRandomInt(min, max) {
@@ -151,5 +166,6 @@ function getRandomInt(min, max) {
 function s() {
 	score++
 	var elem = document.getElementById('scr')
+	document.cookie = 'score=' + score + ';'
 	elem.innerHTML = 'SCORE: ' + score
 }
