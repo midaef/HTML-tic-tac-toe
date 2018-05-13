@@ -3,37 +3,37 @@
 <head>
 	<meta charset="utf-8">
 	<title>TIC-TAC-TOE</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Poppins|Raleway" rel="stylesheet">
 	<script src="https://use.fontawesome.com/a5e30dd034.js"></script>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type='text/css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<h2>TIC-TAC-TOE</h2>
-<hr id='hr2'>
-<div class="background">
+<h2 class="animated bounceInDown">TIC-TAC-TOE</h2>
+<hr id='hr2' class="animated zoomIn">
+<div class="background animated flip">
 	<table>
 		<tr>
-			<td id="cell1" onClick="setX(1)"></td>
-			<td id="cell2" onClick="setX(2)"></td>
-			<td id="cell3" onClick="setX(3)"></td>
+			<td id="cell1" class="animated bounceInLeft" onClick="setX(1)"></td>
+			<td id="cell2" class="animated bounceIn" onClick="setX(2)"></td>
+			<td id="cell3" class="animated bounceInRight" onClick="setX(3)"></td>
 		</tr>
 		<tr>
-			<td id="cell4" onClick="setX(4)"></td>
-			<td id="cell5" onClick="setX(5)"></td>
-			<td id="cell6" onClick="setX(6)"></td>
+			<td id="cell4" class="animated bounceInLeft" onClick="setX(4)"></td>
+			<td id="cell5" class="animated bounceIn" onClick="setX(5)"></td>
+			<td id="cell6" class="animated bounceInRight" onClick="setX(6)"></td>
 		</tr>
 		<tr>
-			<td id="cell7" onClick="setX(7)"></td>
-			<td id="cell8" onClick="setX(8)"></td>
-			<td id="cell9" onClick="setX(9)"></td>
+			<td id="cell7" class="animated bounceInLeft" onClick="setX(7)"></td>
+			<td id="cell8" class="animated bounceIn" onClick="setX(8)"></td>
+			<td id="cell9" class="animated bounceInRight" onClick="setX(9)"></td>
 		</tr>
 	</table>
 </div>
-<h3 id='scr' onClick='s(i)'>SCORE: <h3>
-<hr id='hr1'>
-<div class="footer"><p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; 2018 NameLess</p>
+<h3 id='scr' class="animated bounceInUp" onClick='s(i)'>SCORE: <h3>
+<hr id='hr1' class="animated zoomIn">
+<div class="footer animated bounceInUp"><p>&copy; 2018 NameLess</p>
 <script type="text/javascript" src="js/script.js"></script>
-
 </body>
 </html>
