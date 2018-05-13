@@ -133,24 +133,35 @@
 			clear_field()
 			var elem = document.getElementById("cell2");
 			elem.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
-			var elem = document.getElementById("cell4");
+
+			elem = document.getElementById("cell4");
 			elem.innerHTML = 'W';
-			var elem = document.getElementById("cell5");
+
+			elem = document.getElementById("cell5");
 			elem.innerHTML = 'O';
-			var elem = document.getElementById("cell6");
+
+			elem = document.getElementById("cell6");
 			elem.innerHTML = 'N';
 		}
 		else if (cell = 'o') {
 			clear_field()
 			var elem = document.getElementById("cell2");
 			elem.innerHTML = '<i class="fa fa-circle-thin" aria-hidden="true"></i>';
-			var elem = document.getElementById("cell4");
+			
+			elem = document.getElementById("cell4");
 			elem.innerHTML = 'W';
-			var elem = document.getElementById("cell5");
+			
+			elem = document.getElementById("cell5");
 			elem.innerHTML = 'O';
-			var elem = document.getElementById("cell6");
+			
+			elem = document.getElementById("cell6");
 			elem.innerHTML = 'N';
 		}
+	}
+
+	function newGame() {
+		win = false
+		clear_field()
 	}
 
 	function getRandomInt(min, max) {
