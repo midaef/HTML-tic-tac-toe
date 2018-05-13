@@ -68,3 +68,11 @@ td:hover {
 	-moz-animation-duration: 1.5s;
 	animation-duration: 1.5s;
 }
+
+.restart_button {
+	margin-bottom: 1px; 
+}
+
+#scr {
+	height: 25px;
+}

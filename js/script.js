@@ -2,6 +2,7 @@
 var field = ['', '', '', 
 			 '', '', '',
 			 '', '', '']
+
 var win = false
 
 var score = 0
@@ -31,6 +32,9 @@ function setX(cell) {
 			if (c != 9) {
 				field[cell2] = 'o'
 				o(cell2 + 1)
+				check_field()
+			} else {
+				draw()
 			}
 		}
 	}
@@ -80,8 +84,12 @@ function check_field(){
 	if (field[2] != '' && field[2] == field[4] && field[4] == field[6]) {
 		win = true
 		print_win(field[2])
-	}
-	
+	}	
+}
+
+function draw() {
+	elem = document.getElementById("scr");
+	elem.innerHTML = '<button class="restart_button" onclick="newGame()">New game</button>';
 }
 
 function clear_field(){
@@ -93,8 +101,6 @@ function clear_field(){
 }
 
 function print_win(cell) {
-	console.log(field)
-	console.log(cell)
 	if (cell == 'x') {
 		clear_field()
 		var elem = document.getElementById("cell2");
@@ -109,6 +115,8 @@ function print_win(cell) {
 		elem = document.getElementById("cell6");
 		elem.innerHTML = 'N';
 		s()
+		elem = document.getElementById("scr");
+		elem.innerHTML = '<button class="restart_button" onclick="newGame()">New game</button>';	
 	}
 	else if (cell = 'o') {
 		clear_field()
@@ -123,12 +131,17 @@ function print_win(cell) {
 		
 		elem = document.getElementById("cell6");
 		elem.innerHTML = 'N';
+
+		elem = document.getElementById("scr");
+		elem.innerHTML = '<button class="restart_button" onclick="newGame()">New game</button>';
 	}
 }
 
 function newGame() {
 	win = false
 	clear_field()
+	elem = document.getElementById("scr");
+	elem.innerHTML = 'SCORE: ' + score;
 }
 
 function getRandomInt(min, max) {
