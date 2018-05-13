@@ -41,22 +41,28 @@
 			field[cell-1] = 'x'
 			x(cell)
 			var cell2 = getRandomInt(0, 8)
-				
+			var c = 0;
 			while (field[cell2] != '') {
 				cell2 = getRandomInt(0, 8);
-				var c = 0;
+				
 
 
 				for (var i=0; i<9; i++) {
-					if (field[i] == '') {
-						c++
+					if (field[i] != '') {
+						c++;
 					}
 				}
 				if (c == 9) {
 					break;
 				}
 
-			 }
+			}
+			
+			if (c != 9) {
+				field[cell2] = 'o'
+				o(cell2 + 1)
+			}
+			
 		}
 	}
 
@@ -64,7 +70,7 @@
 		var elem = document.getElementById("cell" + cell);
 		elem.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
 
-		o(cell + 1);
+		
 	}
 
 	function o(cell) {
