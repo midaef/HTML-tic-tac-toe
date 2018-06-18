@@ -7,8 +7,19 @@ var win = false
 
 var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)score\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 var score = cookieValue
-if (score == '') {
+
+cookieValue = parseInt(cookieValue)
+if (cookieValue != NaN) {
+	if (cookieValue >= 0) {
+		score = cookieValue
+	}
+	else {
+		score = 0
+		document.cookie = 'score=' + score + ';'
+	}
+} else {
 	score = 0
+	document.cookie = 'score=' + score + ';'
 }
 var elem = document.getElementById('scr')
 document.cookie = 'score=' + score + ';'
